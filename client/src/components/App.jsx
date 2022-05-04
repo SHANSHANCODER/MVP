@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import AddTopic from './AddTopic.jsx';
 import Topic from './Topic.jsx';
+import Savednews from './Savednews.jsx'
 
 export default function App() {
     const [topics,setTopics]=useState(JSON.parse(localStorage.getItem('storedtopics'))||[]);
     const [showAdd,SetShowAdd]=useState(false)
     const [index, setIndex]=useState(0)
+    const [mainPage,setMainPage]=useState("main")
 
     useEffect(()=>{
     console.log(topics)
@@ -34,14 +36,23 @@ export default function App() {
        setTopics(val)
    }
 
+   const mainpage =()=>{
+     if (mainPage){
+       return ( <div className="topicscontainer">
+       {topics===[]? (<div>Add your news topics</div>) : topics.map(topic=>(<Topic key={topic} topic={topic} handledelete={handledelete}/>)) }
+       </div>)
+     } else {return <Savednews/>}
+   }
     return (
       <div>
-        <h2 className="title">News Depot</h2>
-        <div className="topicscontainer">
-        {topics===[]? <div>Add your news topics</div> : topics.map(topic=>(<Topic key={topic} topic={topic} handledelete={handledelete}/>)) }
-        </div>
+
+        {/* <h2 className="title">News Depot</h2> */}
+        {/* <div className="topicscontainer">
+        {topics===[]? (<div>Add your news topics</div>) : topics.map(topic=>(<Topic key={topic} topic={topic} handledelete={handledelete}/>)) }
+        </div> */}
+        {mainpage()}
         <button className="addtopics"onClick={handleAddTopic}>Add New Topic</button>
-        <button >My Saved News</button>
+        <button className="savenews" onClick={()=>{setMainPage(!mainPage)}}>My Saved News</button>
         <AddTopic showAdd={showAdd} submitAdd={submitAdd}/>
       </div>
     )

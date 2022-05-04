@@ -8,9 +8,9 @@ export default function AddTopic({showAdd,submitAdd}) {
    setAddKeyword(val.target.value)
   }
   const handleSubmit=(e)=>{
-      e.preventDefault()
+   //   e.preventDefault()
 
-      if(!localStorage.getItem("storedtopics")){
+      if(!localStorage.getItem("storedtopics") && addKeyword){
           let localstored=[]
           localstored.push(addKeyword)
           localStorage.setItem("storedtopics",JSON.stringify(localstored))
@@ -21,7 +21,8 @@ export default function AddTopic({showAdd,submitAdd}) {
     <div className={`${!showAdd ? "active":""} show`} >
         <div className="addTopicformbox">
         <form onSubmit={handleSubmit} className="addkeywordform">
-            <input className="addTopicform" type="text" onChange={handleChange} placeholder="new New keyword" required>
+            <input className="addTopicform" type="text" onChange={handleChange}
+            placeholder="new New keyword" required>
             </input>
             <input className="addTopicBtn" type="submit" placeholder='Fetch news!'>
             </input>

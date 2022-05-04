@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Topic({ topic,handledelete }) {
   const [data, setData] = useState([]);
   const [index,setIndex]=useState(9);
- // const [totalresults,setTotalresults]=useState(0)
+
   const [page, setPage]=useState(0)
   const [totalpage,setTotalpage]=useState(1)
 
@@ -16,7 +16,7 @@ useEffect(() => {
   if (data.length===0){
     axiosget()
   }
-// setIndex(9)
+
 },[]);
 
 useEffect(()=>{
@@ -24,7 +24,7 @@ useEffect(()=>{
   console.log(index,data,page,totalpage)
 let id=setInterval(() => {
   setIndex(index-1)
-}, 10000);
+}, 20000);
 if (index<=0){
  if(page >=totalpage){
 axiosget()
@@ -69,16 +69,31 @@ const axiosget=()=>{
     handledelete(localstored)
   };
 
+  const savenews=(e)=>{
+    e.preventDefault()
+    let currentnews=data.filter((item,idx)=>index===idx)
+    if(!localStorage.getItem("mysavednews")){
+      localStorage.setItem("mysavednews",JSON.stringify(currentnews))
+    } else {
+      let savednews=JSON.parse(localStorage.getItem("mysavednews"))
+      savednews.push(currentnews[0])
+      localStorage.setItem("mysavednews",JSON.stringify(savednews))
+    }
+  }
+
   return (
     <div className="eachCont">
       <div className="topiccontainer">
+        <div className="topicbtnwrap">
         <span className="topictitle" onClick={deletetopic}>{topic.toUpperCase()}</span>
+        <button className="savebtn" onClick={savenews}>&#9733;</button>
+        </div>
         <div >
          {data.filter((item,idx)=>
          index===idx).map(filtereditem=>
          (
               <div className="descrpcont">
-            <h4 className="topicdescrip">{filtereditem.title.toUpperCase()}</h4>
+            <h4 className="topicdescrip"><a className="linktext" href={filtereditem.link} target="_blank" rel="noopener noreferrer"> {filtereditem.title.toUpperCase()}</a></h4>
             <div className="contentwrap">
             <div className="content">{filtereditem.description} key={filtereditem.title}</div>
             </div>
