@@ -36,7 +36,7 @@ export default function App() {
 
     return (
       <div>
-        <h2>News Depot</h2>
+        <h2 className="title">News Depot</h2>
         <div className="topicscontainer">
         {topics===[]? <div>Add your news topics</div> : topics.map(topic=>(<Topic key={topic} topic={topic} handledelete={handledelete}/>)) }
         </div>
@@ -47,4 +47,3 @@ export default function App() {
     )
   }
 
-  

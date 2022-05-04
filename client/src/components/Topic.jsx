@@ -72,14 +72,16 @@ const axiosget=()=>{
   return (
     <div className="eachCont">
       <div className="topiccontainer">
-        <span onClick={deletetopic}>{topic.toUpperCase()}</span>
-        <div className="topiccontainer">
+        <span className="topictitle" onClick={deletetopic}>{topic.toUpperCase()}</span>
+        <div >
          {data.filter((item,idx)=>
          index===idx).map(filtereditem=>
          (
-              <div >
-            <h4>{filtereditem.title.toUpperCase()}</h4>
-            <p className="topicdescrip">{filtereditem.description} key={filtereditem.title}</p>
+              <div className="descrpcont">
+            <h4 className="topicdescrip">{filtereditem.title.toUpperCase()}</h4>
+            <div className="contentwrap">
+            <div className="content">{filtereditem.description} key={filtereditem.title}</div>
+            </div>
             </div>
             )
 

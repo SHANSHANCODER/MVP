@@ -8,11 +8,13 @@ body {
   color:  #7ba742;
 }
 
-
 .App {
   text-align: center;
   background-color:rgba(136,184,74,.1);
   color:  #7ba742;
+}
+.title{
+  line-height: 30%;
 }
 
 .show.active{
@@ -64,7 +66,8 @@ body {
 
 .topicscontainer{
   display: flex;
-  flex-direction: column;
+  border: #7ba742;
+box-sizing: border-box;
 }
 span{
   font-size: larger;
@@ -72,6 +75,8 @@ span{
 }
 .topiccontainer{
   display: flex;
+margin: 10px;
+  border: 1px solid #7ba742;
 
 }
 .topicdeletebtn{
@@ -111,12 +116,62 @@ h2{
   height: 40vmin;
   pointer-events: none;
 }
-
+.topicdescrip{
+  height: 150px;
+  overflow-y: scroll;
+  display: flex;
+}
+.descrpcont{
+  width: 200px;
+  border: 1px white;
+}
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 } */
+.contentwrap{
+  height: 200px;
+  overflow-y: hidden;
+}
+.content{
+  height: 100%;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  -moz-animation: my-animation 25s linear infinite;
+  -webkit-animation: my-animation 25s linear infinite;
+  animation: my-animation 25s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateY(100%); }
+  to { -moz-transform: translateY(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateY(100%); }
+  to { -webkit-transform: translateY(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
 
 .App-header {
   min-height: 100vh;
