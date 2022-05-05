@@ -9,5 +9,25 @@
   "files.trimTrailingWhitespace": true,
   "javascript.suggest.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#9b6e71",
+    "activityBar.activeBorder": "#a3bea1",
+    "activityBar.background": "#9b6e71",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#a3bea1",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#9b6e71",
+    "statusBar.background": "#7f575a",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#9b6e71",
+    "statusBarItem.remoteBackground": "#7f575a",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#7f575a",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#7f575a99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#7f575a"
 }
