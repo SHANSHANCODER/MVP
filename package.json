@@ -1,10 +1,10 @@
 {
-  "name": "github-fetcher-fullstack-v2",
+  "name": "Auto News update",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a app that you can customized the news topics that you are interested and follow along",
   "main": "index.js",
   "scripts": {
-    "react-dev": "webpack --mode development --watch",
+    "client-dev": "webpack --mode development --watch",
     "server-dev": "npx nodemon server/index.js"
   },
   "author": "Beth Johnson",

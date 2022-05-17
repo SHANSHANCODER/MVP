@@ -13,7 +13,8 @@ export default function App() {
   const [mainPage, setMainPage] = useState("main");
 
   useEffect(() => {
-    getData();
+    console.log("Thanks for using my News App.","\n","Let's keep in touch!","\n","Shan" )
+ getData();
   }, []);
 
   const getData = async () => {
@@ -26,7 +27,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log(topics);
+  //  console.log(topics);
   }, [topics]);
 
   const handleAddTopic = () => {
@@ -70,10 +71,6 @@ export default function App() {
   };
   return (
     <div>
-      {/* <h2 className="title">News Depot</h2> */}
-      {/* <div className="topicscontainer">
-        {topics===[]? (<div>Add your news topics</div>) : topics.map(topic=>(<Topic key={topic} topic={topic} handledelete={handledelete}/>)) }
-        </div> */}
       {mainpage()}
       <button className="addtopics" onClick={handleAddTopic}>
         Add New Topic

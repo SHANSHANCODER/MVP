@@ -3,11 +3,12 @@ import React, { useState } from "react";
 export default function Savednew(props) {
   const handleDelete = () => {
     let saved = JSON.parse(localStorage.getItem("mysavednews")) || [];
+    saved = saved.filter((item) => item !== null);
     saved = saved.filter((item) => item.title !== props.new.title);
-    console.log(
-      "🚀 ~ file: Savednew.jsx ~ line 9 ~ handleDelete ~ saved",
-      saved
-    );
+    // console.log(
+    //   "🚀 ~ file: Savednew.jsx ~ line 9 ~ handleDelete ~ saved",
+    //   saved
+    // );
     localStorage.setItem("mysavednews", JSON.stringify(saved));
     props.updateSaved();
   };
@@ -24,7 +25,9 @@ export default function Savednew(props) {
           &#9447;
         </button>
       </div>
-      <p className="savedcontent">{props.new.content}</p>
+      <p className="savedcontent">
+        {props.new.content || props.new.description}
+      </p>
     </div>
   );
 }
