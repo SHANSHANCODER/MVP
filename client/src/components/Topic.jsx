@@ -20,9 +20,9 @@ export default function Topic({ topic, handledelete }) {
    // console.log(index, data, page, totalpage);
     let id = setInterval(() => {
       setIndex(index - 1);
-     // console.log("🚀 ~ file: Topic.jsx ~ line 23 ~ id ~ (index - 1)", (index - 1))
+      console.log("🚀 ~ file: Topic.jsx ~ line 23 ~ id ~ (index - 1)", (index - 1))
 
-    }, 5000);
+    }, 60000);
     if (index <= 0) {
 
       if (page === totalpage) {
@@ -41,7 +41,7 @@ export default function Topic({ topic, handledelete }) {
     axios
       .get("/api/nextpage", { params: { q: topic, page: page } })
       .then((res) => {
-    //    console.log(res.data.results);
+        console.log(res.data.results);
         setData(res.data.results);
         setIndex(9);
         setPage(page + 1);
@@ -54,7 +54,7 @@ export default function Topic({ topic, handledelete }) {
     axios
       .get("/api", { params: { q: topic } })
       .then((res) => {
-        //console.log(res.data);
+        console.log(res.data);
         setData(res.data.results);
         setTotalpage(Math.floor(res.data.totalResults / 10));
         setPage(1);

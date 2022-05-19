@@ -31,7 +31,7 @@ let Cli = mongoose.model("Cli", clientSchema);
 
 
 let save = (data, callback = () => {}) => {
-  console.log("🚀 ~ file: db.js ~ line 64 ~ save ~ save", save);
+//  console.log("🚀 ~ file: db.js ~ line 64 ~ save ~ save", save);
   Cli.create(data, (err, result) => {
     if (err) {
       callback(err);

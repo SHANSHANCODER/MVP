@@ -13,21 +13,27 @@ export default function App() {
   const [mainPage, setMainPage] = useState("main");
 
   useEffect(() => {
-    console.log("Thanks for using my News App.","\n","Let's keep in touch!","\n","Shan" )
- getData();
+    console.log(
+      "Thanks for using my News App.",
+      "\n",
+      "Let's keep in touch!",
+      "\n",
+      "Shan"
+    )
+    //getData();
   }, []);
 
-  const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/");
-    axios
-      .post("/api/userdata", res.data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    //setIP(res.data.IPv4)
-  };
+  // const getData = async () => {
+  //   const res = await axios.get("https://geolocation-db.com/json/");
+  //   axios
+  //     .post("/api/userdata", res.data)
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  //   setIP(res.data.IPv4)
+  // };
 
   useEffect(() => {
-  //  console.log(topics);
+      console.log(topics);
   }, [topics]);
 
   const handleAddTopic = () => {
@@ -70,7 +76,7 @@ export default function App() {
     }
   };
   return (
-    <div>
+    <div className="mainCont">
       {mainpage()}
       <button className="addtopics" onClick={handleAddTopic}>
         Add New Topic

@@ -1,0 +1,7 @@
+# choose the port you would like to use
+PORT=
+
+# signup for a free newsdata.io API account.
+# copy and paste the API key bellow
+
+apikey=""
