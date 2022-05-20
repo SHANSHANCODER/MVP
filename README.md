@@ -19,11 +19,14 @@ MERN stack
 - Run `npm run server-dev` and `npm run client-dev` to start the application
 
  ## Main functionalities of the application
-look for interesting news topics
+look for interesting news topics <br/>
 ![Add topics](https://i.giphy.com/media/S4DGo7e2j1LvsV6PxC/giphy.webp)
-Delete the topics and open the news in another browser tab
+<br/>
+Delete the topics and open the news in another browser tab <br/>
 ![Delete topics](https://i.giphy.com/media/ECicjp9VoaFU75y3fF/giphy.webp)
-Save interesting news to read later and delete saved news
+<br/>
+Save interesting news to read later and delete saved news <br/>
 ![Saved news](https://i.giphy.com/media/Gpk7T9GEVIPMqUCiip/giphy.webp)
-Combine it with AlwaysOnTop extension to always have the news on top of your desktop when you work or watch videos.
+<br/>
+Combine it with AlwaysOnTop extension to always have the news on top of your desktop when you work or watch videos. <br/>
 ![Combining it with browser extensions](https://i.giphy.com/media/G3cZzPxVJ0gM6edf5y/giphy.webp)
