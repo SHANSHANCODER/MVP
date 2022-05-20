@@ -12,12 +12,18 @@ MERN stack
 - Node.js
 - This site was built using [newsdata.io](https://newsdata.io/) API
 
-# How to start the App
+## How to start the App
 - Fork and Clone this repo to your local system
 - Run `npm install` to install necessary packages
 - Complete the sampleenv file and change the file name to .env
 - Run `npm run server-dev` and `npm run client-dev` to start the application
 
-# Main functionality of the application
-## look for interesting news topics
+ ## Main functionalities of the application
+look for interesting news topics
 ![Add topics](https://i.giphy.com/media/S4DGo7e2j1LvsV6PxC/giphy.webp)
+Delete the topics and open the news in another browser tab
+![Delete topics](https://i.giphy.com/media/ECicjp9VoaFU75y3fF/giphy.webp)
+Save interesting news to read later and delete saved news
+![Saved news](https://i.giphy.com/media/Gpk7T9GEVIPMqUCiip/giphy.webp)
+Combine it with AlwaysOnTop extension to always have the news on top of your desktop when you work or watch videos.
+![Combining it with browser extensions](https://i.giphy.com/media/G3cZzPxVJ0gM6edf5y/giphy.webp)
